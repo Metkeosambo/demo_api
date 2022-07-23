@@ -35,31 +35,36 @@ public class UserController {
 	
 	@Autowired
 	UserMapper userMapper;
+	
 	@RequestMapping(value="/createuser",headers = {
     "content-type=application/json" }, consumes = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
 	public User createUser(@RequestBody User user){
 		try {
 			if(Validation.Isempty(user.getUserName())==false) {//Example for check empty paramater
+				
 				return userService.createUser(user);
+				
 			}else {
-				throw new ResponseStatusException(
-				           HttpStatus.BAD_REQUEST, "Invalid Paramater");
+				
+				throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid Paramater");
 			}
 		}catch(Exception ex) {
+			
 			LoggerConfig.setError(UserController.class.toString(), ex.getMessage());
-			throw new ResponseStatusException(
-			           HttpStatus.BAD_REQUEST, ex.getMessage());
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ex.getMessage());
 		}
 		
 	}	
 	
 	@RequestMapping(value="/getuser/{userId}",method = RequestMethod.GET)
 	public User getUser(@PathVariable Long userId){
+		
 		LoggerConfig.setInfo(UserController.class.toString(), "Call Service User");
 		return userService.getUser(userId);
 	}
 	@RequestMapping(value="/getall",method = RequestMethod.GET)
 	public List<User> getAllUser(){
+		
 		//List<User> userWithLinks= new ArrayList<>();
 		List<User> user = userService.getAllUser();
 //		if(!CollectionUtils.isEmpty(user) ){
