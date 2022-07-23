@@ -36,23 +36,30 @@ public class ProductController {
 	public Product createProduct(@RequestBody Product pro){
 		try {
 			if(Validation.Isempty(pro.getProName())==false) {//Example for check empty paramater
+				
 				return proService.createProduct(pro);
+				
 			}else {
-				throw new ResponseStatusException(
-				           HttpStatus.BAD_REQUEST, "Invalid Paramater");
+				
+				throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid Paramater");
 			}
 		}catch(Exception ex) {
+			
 			LoggerConfig.setError(ProductController.class.toString(), ex.getMessage());
 			throw new ResponseStatusException(
 			           HttpStatus.BAD_REQUEST, ex.getMessage());
+			
 		}
 		
 	}	
 	
 	@RequestMapping(value="/getpro/{proId}",method = RequestMethod.GET)
 	public Product getProduct(@PathVariable Long proId){
+		
 		LoggerConfig.setInfo(ProductController.class.toString(), "Call Service Product");
+		
 		return proService.getProduct(proId);
+		
 	}
 	
 	@RequestMapping(value="/update",headers = {
@@ -60,15 +67,20 @@ public class ProductController {
 	public Product updateProduct(@RequestBody Product pro){
 		try {
 			if(Validation.Isempty(pro.getProName())==false||Validation.Isempty(pro.getProId().toString())==false) {//Example for check empty paramater
+				
 				return proService.updateProduct(pro);
+				
 			}else {
-				throw new ResponseStatusException(
-				           HttpStatus.BAD_REQUEST, "Invalid Paramater");
+				
+				throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid Paramater");
+				
 			}
 		}catch(Exception ex) {
+			
 			LoggerConfig.setError(ProductController.class.toString(), ex.getMessage());
 			throw new ResponseStatusException(
 			           HttpStatus.BAD_REQUEST, ex.getMessage());
+			
 		}
 		
 	}
