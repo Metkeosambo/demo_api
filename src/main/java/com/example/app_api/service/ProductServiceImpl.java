@@ -25,53 +25,75 @@ public class ProductServiceImpl implements ProductService {
 	ProductDao proDao;
 	@Override
 	public Product createProduct(Product pro) {
+		
 		TransactionStatus txStatus =
 		        transactionManager.getTransaction(new DefaultTransactionDefinition());
+		
 		Product u = new Product();
+		
 		try {
 			  u = proDao.createProduct(pro);
+			
 		    } catch (Exception e) {
+			
 		      LoggerConfig.setError(ProductServiceImpl.class.toString(), e.getMessage());
+			
 		      transactionManager.rollback(txStatus);
 		      throw e;
+			
 		    }
 		    transactionManager.commit(txStatus);
+		
 		    return u;	
 	}
 
 	@Override
 	public Product getProduct(Long proId) {
+		
 		return proDao.getProduct(proId);
+		
 	}
 
 	@Override
 	public Product updateProduct(Product pro) {
+		
 		TransactionStatus txStatus =
 		        transactionManager.getTransaction(new DefaultTransactionDefinition());
 		//return userDao.createUser(user);
 		Product u = new Product();
+		
 		try {
 			  u = proDao.updateProduct(pro);
+			
 		    } catch (Exception e) {
+			
 		      LoggerConfig.setError(ProductServiceImpl.class.toString(), e.getMessage());
 		      transactionManager.rollback(txStatus);
 		      throw e;
+			
 		    }
+		
 		    transactionManager.commit(txStatus);
 		    return u;	
 	}
 	@Override
 	public void updateProductQty(Product pro) {
+		
 		TransactionStatus txStatus =
 		        transactionManager.getTransaction(new DefaultTransactionDefinition());
 
 		try {
+			
 			  proDao.updateProductQty(pro);
+			
 		    } catch (Exception e) {
+			
 		      LoggerConfig.setError(ProductServiceImpl.class.toString(), e.getMessage());
 		      transactionManager.rollback(txStatus);
 		      throw e;
+			
 		    }
+		
 		    transactionManager.commit(txStatus);
 	}
 
