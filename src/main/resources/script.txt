@@ -1,4 +1,4 @@
-insert into USERS (USER_NAME ,GENDER ,DOB ,CREATE_BY ,CREATE_DATE,UPDATE_BY  ) values ('admin','M','21-01-1998','system',CURRENT_TIMESTAMP(),'update');
+
  CREATE TABLE IF NOT EXISTS users (
   `user_id`         INTEGER  PRIMARY KEY AUTO_INCREMENT,
   `user_name` VARCHAR(50) ,
@@ -10,7 +10,6 @@ insert into USERS (USER_NAME ,GENDER ,DOB ,CREATE_BY ,CREATE_DATE,UPDATE_BY  ) v
    `update_date` TIMESTAMP WITH TIME ZONE
 );
 
-DROP TABLE PRODUCT;
 CREATE TABLE IF NOT EXISTS `Product` (
   `product_id`         INTEGER  PRIMARY KEY AUTO_INCREMENT,
   `product_name` VARCHAR(50),
@@ -30,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `Product` (
    `updated_by` VARCHAR(50) ,
    `update_date` TIME WITH TIME ZONE
 );
-DROP table  checkout_detail ;
+
 CREATE TABLE IF NOT EXISTS checkout_detail (
    `checkout_detail_id` INTEGER  PRIMARY KEY AUTO_INCREMENT,
    `checkout_id` long ,
