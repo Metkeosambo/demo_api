@@ -17,15 +17,21 @@ public class UserDaoImpl implements UserDao {
 	
 	@Override
 	public User createUser(User user) {
+		
 		Long newUserId = usermapper.createUser(user);
 		return getUser(user.getUserId());
+		
 	}
 	@Override
 	public User getUser(Long userId) {
+		
 		return usermapper.getUser(userId);
+		
 	}
 	@Override
 	public List<User> getAllUser() {
+		
 		return usermapper.getAllUser();
+		
 	}
 }
