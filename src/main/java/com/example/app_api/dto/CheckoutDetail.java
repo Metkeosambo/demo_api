@@ -4,22 +4,31 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 //====================== class checkout detail
 public class CheckoutDetail{
+	
 	@JsonProperty("chkdetailid")
 	private Long chkDetailId;
+	
 	@JsonProperty("chkid")
 	private Long chkId;
+	
 	@JsonProperty("proid")
 	private Long proId;
+	
 	@JsonProperty("quantity")
 	private Integer quantity;
+	
 	@JsonProperty("createby")
 	private String createBy;
+	
 	@JsonProperty("createdate")
 	private String createDate;
+	
 	@JsonProperty("updateBy")
 	private String updateBy;
+	
 	@JsonProperty("updateDate")
 	private String updateDate;
+	
 	public CheckoutDetail() {
 		super();
 	}
