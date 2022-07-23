@@ -16,20 +16,27 @@ public class ProductDaoImpl implements ProductDao{
 	
 	@Override
 	public Product createProduct(Product pro) {
+		
 		Long newProId = promapper.createProduct(pro);
 		return getProduct(pro.getProId());
+		
 	}
 	@Override
 	public Product getProduct(Long proId) {
+		
 		return promapper.getProduct(proId);
+		
 	}
 	@Override
 	public Product updateProduct(Product pro) {
+		
 		promapper.updateProduct(pro);
 		return getProduct(pro.getProId());
+		
 	}
 	@Override
 	public void updateProductQty(Product pro) {
+		
 		promapper.updateProductQty(pro);
 		//return getProduct(pro.getProId());
 	}
@@ -37,5 +44,6 @@ public class ProductDaoImpl implements ProductDao{
 	public List<Product> getAllProduct() {
 		// TODO Auto-generated method stub
 		return promapper.getAllProduct();
+		
 	}
 }
