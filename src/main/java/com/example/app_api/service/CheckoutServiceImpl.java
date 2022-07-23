@@ -43,18 +43,21 @@ public class CheckoutServiceImpl implements CheckoutService {
 				// check empty product ID and Qty
 				if(Validation.Isempty(temp.getProId()==null?"":temp.getProId().toString())==false && Validation.Isempty(temp.getQty()==null?"":temp.getQty().toString())==false) {
 					
-					chkDao.createCheckoutDetail(new CheckoutDetail(temp.getChkDetailId(), id, temp.getProId(), temp.getQty(), temp.getCreateBy(), null)); 
+					chkDao.createCheckoutDetail(new CheckoutDetail(temp.getChkDetailId(), id, temp.getProId(), temp.getQty())); 
 					// cut Qty
 					
 					proDao.updateProductQty(new Product(temp.getProId(), null, null, temp.getQty(), null, null) );
 				}else {
+					
 					throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid Paramater");
 				}		
 	        });
 		    } catch (Exception e) {
+		    	
 		      LoggerConfig.setError(CheckoutServiceImpl.class.toString(), e.getMessage());
 		      transactionManager.rollback(txStatus);
 		      throw e;
+		      
 		    }
 		    transactionManager.commit(txStatus);	
 	}

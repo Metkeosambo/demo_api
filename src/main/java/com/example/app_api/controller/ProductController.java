@@ -53,7 +53,7 @@ public class ProductController {
 		
 	}	
 	
-	@RequestMapping(value="/getpro/{proId}",method = RequestMethod.GET)
+	@RequestMapping(value="/get/{proId}",method = RequestMethod.GET)
 	public Product getProduct(@PathVariable Long proId){
 		
 		LoggerConfig.setInfo(ProductController.class.toString(), "Call Service Product");

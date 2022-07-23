@@ -36,7 +36,7 @@ public class UserController {
 	@Autowired
 	UserMapper userMapper;
 	
-	@RequestMapping(value="/createuser",headers = {
+	@RequestMapping(value="/create",headers = {
     "content-type=application/json" }, consumes = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
 	public User createUser(@RequestBody User user){
 		try {
@@ -56,13 +56,13 @@ public class UserController {
 		
 	}	
 	
-	@RequestMapping(value="/getuser/{userId}",method = RequestMethod.GET)
+	@RequestMapping(value="/get/{userId}",method = RequestMethod.GET)
 	public User getUser(@PathVariable Long userId){
 		
 		LoggerConfig.setInfo(UserController.class.toString(), "Call Service User");
 		return userService.getUser(userId);
 	}
-	@RequestMapping(value="/getall",method = RequestMethod.GET)
+	@RequestMapping(value="/all",method = RequestMethod.GET)
 	public List<User> getAllUser(){
 		
 		//List<User> userWithLinks= new ArrayList<>();

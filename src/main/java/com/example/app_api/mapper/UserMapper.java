@@ -23,7 +23,9 @@ public interface UserMapper {
 	@Select("SELECT * FROM users  WHERE user_id = #{userId}")
 	@Results({
 		@Result(property = "userId", column = "user_id"),
-	    @Result(property = "userName", column = "user_name")})
+	    @Result(property = "userName", column = "user_name"),
+	    @Result(property = "createBy", column = "created_by"),
+	    @Result(property = "createDate", column = "create_date")})
 	public User getUser(@Param("userId") Long userId);
 	
 	@Select("select * from users")

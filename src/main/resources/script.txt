@@ -34,9 +34,5 @@ CREATE TABLE IF NOT EXISTS checkout_detail (
    `checkout_detail_id` INTEGER  PRIMARY KEY AUTO_INCREMENT,
    `checkout_id` long ,
    `product_id` long ,
-   `quantity` long ,
-   `created_by` VARCHAR(50) ,
-   `create_date` TIMESTAMP WITH TIME ZONE,
-   `updated_by` VARCHAR(50) ,
-   `update_date` TIMESTAMP WITH TIME ZONE
+   `quantity` long 
 );

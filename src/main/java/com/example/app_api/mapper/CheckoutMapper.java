@@ -19,7 +19,7 @@ public interface CheckoutMapper {
 	@SelectKey(statement="select max(checkout_id) from checkout", keyProperty="chkId", before=false, resultType=long.class)
 	public Long createCheckout(Checkout chk);
 	
-	@Insert("insert into checkout_detail (checkout_id,product_id,quantity,created_by,create_date) values (#{chkId},#{proId},#{quantity},#{createBy},CURRENT_TIMESTAMP())")
+	@Insert("insert into checkout_detail (checkout_id,product_id,quantity) values (#{chkId},#{proId},#{quantity})")
 	public <CheckoutDetail> void createCheckoutDetail(CheckoutDetail chkDetail);
 	
 }

@@ -26,7 +26,7 @@ class AppApiApplicationTests {
 	
 	@Autowired
 	UserMapper userMapper;
-	
+	@Test
 	void RunTestUser() {
 		
 		logger.info("Inserting -> {}", userService.createUser(new User( null, "Sopheak", "M", "21-01-1998", "Junit", null)));
@@ -60,15 +60,14 @@ class AppApiApplicationTests {
 	CheckoutMapper CheckoutMapper;
 	@Test
 	void RunTestCheckout() {
+		
 		CheckoutDetail chkd1 = new CheckoutDetail();
 		chkd1.setProId((long) 1);
 		chkd1.setQty(2);
-		chkd1.setCreateBy("Junit");
 		
 		CheckoutDetail chkd2 = new CheckoutDetail();
 		chkd2.setProId((long) 1);
 		chkd2.setQty(5);
-		chkd2.setCreateBy("Junit");
 		ArrayList<CheckoutDetail> detail = new ArrayList<>();
 		detail.add(chkd1);
 		detail.add(chkd2);

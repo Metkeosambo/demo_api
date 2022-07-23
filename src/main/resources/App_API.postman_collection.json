@@ -6,194 +6,209 @@
 	},
 	"item": [
 		{
-			"name": "create_user",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"userName\":\"\",\r\n    \"gender\":\"M\",\r\n    \"dob\":\"21-01-1998\",\r\n    \"createBy\":\"admin\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "User",
+			"item": [
+				{
+					"name": "create_user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"\",\r\n    \"gender\":\"M\",\r\n    \"dob\":\"21-01-1998\",\r\n    \"createBy\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8888/user/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"user",
+								"create"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:8888/user/createuser",
-					"host": [
-						"localhost"
-					],
-					"port": "8888",
-					"path": [
-						"user",
-						"createuser"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get user by ID",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8888/user/getuser/1",
-					"host": [
-						"localhost"
-					],
-					"port": "8888",
-					"path": [
-						"user",
-						"getuser",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "create Product",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"proName\":\"Coca\",\r\n    \"proCode\":\"AA11\",\r\n    \"quantity\":\"20\",\r\n    \"createBy\":\"admin\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "get user by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8888/user/get/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"user",
+								"get",
+								"1"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:8888/pro/create",
-					"host": [
-						"localhost"
-					],
-					"port": "8888",
-					"path": [
-						"pro",
-						"create"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get product by ID",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8888/pro/getpro/1",
-					"host": [
-						"localhost"
-					],
-					"port": "8888",
-					"path": [
-						"pro",
-						"getpro",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "update product",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"proId\":\"1\",\r\n    \"proName\":\"Cocaa\",\r\n    \"proCode\":\"AA111\",\r\n    \"quantity\":\"200\",\r\n    \"updateBy\":\"admin\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "getalluser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8888/user/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"user",
+								"all"
+							]
 						}
-					}
-				},
-				"url": {
-					"raw": "localhost:8888/pro/update",
-					"host": [
-						"localhost"
-					],
-					"port": "8888",
-					"path": [
-						"pro",
-						"update"
-					]
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "getalluser",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8888/user/getall",
-					"host": [
-						"localhost"
-					],
-					"port": "8888",
-					"path": [
-						"user",
-						"getall"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get product all",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8888/pro/getall",
-					"host": [
-						"localhost"
-					],
-					"port": "8888",
-					"path": [
-						"pro",
-						"getall"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "checkout",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"userId\":\"1\",\r\n    \"createBy\":\"admin\",\r\n    \"chkdetail\":[\r\n        {\r\n            \"proid\":\"1\",\r\n            \"quantity\":\"1\",\r\n            \"createby\":\"admin\"\r\n        },\r\n        {\r\n            \"proid\":\"2\",\r\n            \"quantity\":\"2\",\r\n            \"createby\":\"admin\"\r\n        }\r\n    ]\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Product",
+			"item": [
+				{
+					"name": "create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"proName\":\"Coca\",\r\n    \"proCode\":\"AA11\",\r\n    \"quantity\":\"20\",\r\n    \"createBy\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8888/pro/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"pro",
+								"create"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:8888/checkout/add",
-					"host": [
-						"localhost"
-					],
-					"port": "8888",
-					"path": [
-						"checkout",
-						"add"
-					]
+				{
+					"name": "get product by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8888/pro/get/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"pro",
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"proId\":\"1\",\r\n    \"proName\":\"Cocaa\",\r\n    \"proCode\":\"AA111\",\r\n    \"quantity\":\"200\",\r\n    \"updateBy\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8888/pro/update",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"pro",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get product all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8888/pro/getall",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"pro",
+								"getall"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "Checkout",
+			"item": [
+				{
+					"name": "checkout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"1\",\r\n    \"createBy\":\"admin\",\r\n    \"chkdetail\":[\r\n        {\r\n            \"proid\":\"1\",\r\n            \"quantity\":\"20\",\r\n            \"createby\":\"admin\"\r\n        },\r\n        {\r\n            \"proid\":\"2\",\r\n            \"quantity\":\"15\",\r\n            \"createby\":\"admin\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8888/checkout/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"checkout",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
