@@ -43,11 +43,14 @@ public class CheckoutController {
 	public ResponseEntity<Void> CreateCheckout(@RequestBody Checkout chk){
 		try {
 			if(Validation.Isempty(chk.getUserId().toString())==false) {//Example for check empty paramater
+				
 				chkService.createCheckout(chk);
+				
 				return new ResponseEntity<>(HttpStatus.OK);
+				
 			}else {
-				throw new ResponseStatusException(
-				           HttpStatus.BAD_REQUEST, "Invalid Paramater");
+				
+				throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid Paramater");		
 			}
 //		String body = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
 //		ObjectMapper mapper = new ObjectMapper();
