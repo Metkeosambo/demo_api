@@ -14,14 +14,19 @@ public class CheckoutDaoImpl implements CheckoutDao {
 
 	@Autowired
 	CheckoutMapper chkmapper;
+	
 	@Override
 	public Long createCheckout(Checkout chk) {
+		
 		chkmapper.createCheckout(chk);
+		
 		return chk.getChkId();
+		
 	}
 
 	@Override
 	public <CheckoutDetail> void createCheckoutDetail(CheckoutDetail chkDetail) {
+		
 		chkmapper.createCheckoutDetail(chkDetail);
 	}
 
