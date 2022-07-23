@@ -25,9 +25,9 @@ CREATE TABLE IF NOT EXISTS `Product` (
    `checkout_id` INTEGER  PRIMARY KEY AUTO_INCREMENT,
    `user_id` long ,
    `created_by` VARCHAR(50) ,
-   `create_date` TIME WITH TIME ZONE,
+   `create_date` TIMESTAMP WITH TIME ZONE,
    `updated_by` VARCHAR(50) ,
-   `update_date` TIME WITH TIME ZONE
+   `update_date` TIMESTAMP WITH TIME ZONE
 );
 
 CREATE TABLE IF NOT EXISTS checkout_detail (
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS checkout_detail (
    `product_id` long ,
    `quantity` long ,
    `created_by` VARCHAR(50) ,
-   `create_date` TIME WITH TIME ZONE,
+   `create_date` TIMESTAMP WITH TIME ZONE,
    `updated_by` VARCHAR(50) ,
-   `update_date` TIME WITH TIME ZONE
+   `update_date` TIMESTAMP WITH TIME ZONE
 );
